@@ -1,0 +1,99 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerr Sundries</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #EEDB8A;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    header {
+        background-color: #111;
+        padding: 20px 0;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    nav a {
+        color: #EEDB8A;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+    nav a:hover {
+        color: #FFF;
+        transform: scale(1.1);
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+    .logo {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        transition: transform 1s ease-in-out;
+    }
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="Home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+
+        </nav>
+    </header>
+    
+    <div class="logo-container">
+        <img src="logosm.png" alt="Kerr Sundries logo: A circular emblem with a black 'K' on a red-orange gradient background, bordered by gold" class="logo">
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Kerr Sundries</h1>
+        <p>Discover our unique collection of sundries and curiosities. From the practical to the whimsical, we have something for everyone.</p>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.textShadow = '0 0 10px #EEDB8A';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.textShadow = 'none';
+            });
+        });
+
+        // Logo animation
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('mouseover', () => {
+            logo.style.transform = 'rotate(360deg) scale(1.1)';
+        });
+        logo.addEventListener('mouseout', () => {
+            logo.style.transform = 'rotate(0deg) scale(1)';
+        });
+    });
+    </script>
+</body>
+</html>
