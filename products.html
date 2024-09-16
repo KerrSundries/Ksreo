@@ -1,0 +1,199 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerr Sundries - Products</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #EEDB8A;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    header {
+        background-color: #111;
+        padding: 20px 0;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    nav a {
+        color: #EEDB8A;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+        color: #FFF;
+        transform: scale(1.1);
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        transition: transform 1s ease-in-out;
+    }
+    .content {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #EEDB8A;
+        margin-bottom: 30px;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .product-item {
+        background-color: rgba(238, 219, 138, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(238, 219, 138, 0.2);
+    }
+    .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    .product-name {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    .product-price {
+        font-weight: bold;
+        color: #EEDB8A;
+        margin-bottom: 15px;
+    }
+    .add-to-cart {
+        background-color: #EEDB8A;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .add-to-cart:hover {
+        background-color: #FFF;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    
+    <div class="logo-container">
+        <img src="logosm.png" alt="Kerr Sundries logo: A circular emblem with a black 'K' on a red-orange gradient background, bordered by gold" class="logo">
+    </div>
+
+    <div class="content">
+        <h1>Our Products</h1>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/tech" alt="Curiosity Cube" class="product-image">
+                <h3 class="product-name">Curiosity Cube</h3>
+                <p class="product-price">$19.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/arch" alt="Whimsical Widget" class="product-image">
+                <h3 class="product-name">Whimsical Widget</h3>
+                <p class="product-price">$24.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/nature" alt="Enigma Essence" class="product-image">
+                <h3 class="product-name">Enigma Essence</h3>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/tech/sepia" alt="Quantum Quill" class="product-image">
+                <h3 class="product-name">Quantum Quill</h3>
+                <p class="product-price">$14.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/arch/grayscale" alt="Nebula Necklace" class="product-image">
+                <h3 class="product-name">Nebula Necklace</h3>
+                <p class="product-price">$49.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="https://placeimg.com/300/200/nature/sepia" alt="Temporal Teacup" class="product-image">
+                <h3 class="product-name">Temporal Teacup</h3>
+                <p class="product-price">$29.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('mouseover', () => {
+            logo.style.transform = 'rotate(360deg) scale(1.1)';
+        });
+        logo.addEventListener('mouseout', () => {
+            logo.style.transform = 'rotate(0deg) scale(1)';
+        });
+
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productName = e.target.parentNode.querySelector('.product-name').textContent;
+                const productPrice = e.target.parentNode.querySelector('.product-price').textContent;
+                console.log(`Added to cart: ${productName} - ${productPrice}`);
+                // Here you would typically update the cart state and possibly show a notification
+                button.textContent = 'Added to Cart';
+                button.disabled = true;
+                setTimeout(() => {
+                    button.textContent = 'Add to Cart';
+                    button.disabled = false;
+                }, 2000);
+            });
+        });
+
+        // Add hover effects to product items
+        const productItems = document.querySelectorAll('.product-item');
+        productItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.backgroundColor = 'rgba(238, 219, 138, 0.2)';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.backgroundColor = 'rgba(238, 219, 138, 0.1)';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

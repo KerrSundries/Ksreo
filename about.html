@@ -1,0 +1,230 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Kerr Sundries</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: #EEDB8A;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    header {
+        background-color: #111;
+        padding: 20px 0;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    nav a {
+        color: #EEDB8A;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+    nav a:hover {
+        color: #FFF;
+        transform: scale(1.1);
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        transition: transform 1s ease-in-out;
+    }
+    .content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .about-section {
+        background-color: rgba(238, 219, 138, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 30px;
+    }
+    h1, h2 {
+        color: #EEDB8A;
+    }
+    .timeline {
+        position: relative;
+        max-width: 600px;
+        margin: 40px auto;
+    }
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #EEDB8A;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: #EEDB8A;
+        border: 4px solid #FF9F55;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        left: 50%;
+    }
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid #EEDB8A;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #EEDB8A;
+    }
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid #EEDB8A;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #EEDB8A transparent transparent;
+    }
+    .right::after {
+        left: -16px;
+    }
+    .content-item {
+        padding: 20px 30px;
+        background-color: #EEDB8A;
+        color: black;
+        position: relative;
+        border-radius: 6px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+
+        </nav>
+    </header>
+    
+    <div class="logo-container">
+        <img src="logosm.png" alt="Kerr Sundries logo: A circular emblem with a black 'K' on a red-orange gradient background, bordered by gold" class="logo">
+    </div>
+
+    <div class="content">
+        <h1>About Kerr Sundries</h1>
+        <div class="about-section">
+            <p>Kerr Sundries is a unique emporium of curiosities, practical items, and whimsical treasures. Founded in 2024, we've been delighting customers with our artfull collection of sundries.</p>
+            <p>Our mission is to bring joy, utility, and a touch of the extraordinary to everyday life. Whether you're searching for that perfect artwork, a conversation-starting decoration, or a practical solution to a common problem, Kerr Sundries is your go-to destination.</p>
+        </div>
+
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="content-item">
+                    <h3>2010</h3>
+                    <p>Kerr Sundries founded as a small corner shop in downtown.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content-item">
+                    <h3>2015</h3>
+                    <p>Expanded to include online sales, reaching customers nationwide.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content-item">
+                    <h3>2018</h3>
+                    <p>Launched our own line of Kerr-branded unique sundries.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content-item">
+                    <h3>2023</h3>
+                    <p>Celebrating over a decade of bringing curiosities to our valued customers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.textShadow = '0 0 10px #EEDB8A';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.textShadow = 'none';
+            });
+        });
+
+        // Logo animation
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('mouseover', () => {
+            logo.style.transform = 'rotate(360deg) scale(1.1)';
+        });
+        logo.addEventListener('mouseout', () => {
+            logo.style.transform = 'rotate(0deg) scale(1)';
+        });
+
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        timelineItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(item);
+        });
+    });
+    </script>
+</body>
+</html>
